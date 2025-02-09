@@ -4,7 +4,7 @@ const path = require('path');
 
 const owner = 'smartbugs'; // Replace with the repository owner
 const repo = 'smartbugs-wild'; // Replace with the repository name
-const path = 'contracts'; // Replace with the path to the folder in the repository
+const folderPath = 'contracts'; // Replace with the path to the folder in the repository
 const branch = 'master'; // Replace with the branch name, e.g., 'main' or 'master'
 
 async function getRepoContents(owner, repo, folderPath, branch) {
