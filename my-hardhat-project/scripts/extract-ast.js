@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const folderPath = path.join(__dirname,'..', 'artifacts/build-info'); // Replace with your folder path
+const folderPath = path.join(__dirname, '..', 'artifacts/build-info'); // Replace with your folder path
+const outputFolderPath = path.join(__dirname, '..', 'AST/source'); // Output folder for AST files
 
 async function extractASTs(folderPath) {
     // Read the directory
@@ -21,7 +22,17 @@ async function extractASTs(folderPath) {
                 for (const source in jsonContent.output.sources) {
                     if (jsonContent.output.sources[source].ast) {
                         const ast = jsonContent.output.sources[source].ast;
-                        console.log(`AST for ${source}:`, JSON.stringify(ast, null, 2));
+                        
+                        // Create directory for the source
+                        const sourceFolder = path.join(outputFolderPath, source);
+                        if (!fs.existsSync(sourceFolder)) {
+                            fs.mkdirSync(sourceFolder, { recursive: true });
+                        }
+
+                        // Write AST to file
+                        const astFilePath = path.join(sourceFolder, 'ast.json');
+                        fs.writeFileSync(astFilePath, JSON.stringify(ast, null, 2), 'utf8');
+                        console.log(`AST for ${source} written to ${astFilePath}`);
                     }
                 }
             } else {
