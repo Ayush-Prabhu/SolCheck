@@ -1,3 +1,7 @@
+#Compiled stuff
+my-hardhat-project/AST/
+my-hardhat-project/artifacts/
+
 # Logs
 logs
 *.log
