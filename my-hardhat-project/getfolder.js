@@ -26,13 +26,16 @@ async function downloadFile(url, filePath) {
 async function downloadFolder(owner, repo, folderPath, branch) {
     try {
         const contents = await getRepoContents(owner, repo, folderPath, branch);
+        let i=0;
         for (const item of contents) {
             if (item.type === 'file') {
                 const filePath = path.join(__dirname, folderPath, item.name);
                 fs.mkdirSync(path.dirname(filePath), { recursive: true });
                 await downloadFile(item.download_url, filePath);
                 console.log(`Downloaded ${item.name}`);
+                i++;
             }
+            
         }
         console.log('Folder download completed.');
     } catch (error) {

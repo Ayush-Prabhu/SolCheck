@@ -1,10 +1,10 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/workspaces/SolCheck/my-hardhat-project/contracts/Lock-copy.sol": {
-      "lastModificationDate": 1739083691837,
-      "contentHash": "7eee587c347fe6b1de50c96688cb9477",
-      "sourceName": "contracts/Lock-copy.sol",
+    "/workspaces/SolCheck/my-hardhat-project/contracts/HelloWorld.sol": {
+      "lastModificationDate": 1739294392477,
+      "contentHash": "0b14cebc2f29a44314f19bb9002e7878",
+      "sourceName": "contracts/HelloWorld.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
@@ -31,46 +31,10 @@
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.28"
+        "^0.8.0"
       ],
       "artifacts": [
-        "Lock"
-      ]
-    },
-    "/workspaces/SolCheck/my-hardhat-project/contracts/Lock.sol": {
-      "lastModificationDate": 1739080549270,
-      "contentHash": "7eee587c347fe6b1de50c96688cb9477",
-      "sourceName": "contracts/Lock.sol",
-      "solcConfig": {
-        "version": "0.8.28",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.28"
-      ],
-      "artifacts": [
-        "Lock"
+        "HelloWorld"
       ]
     }
   }
