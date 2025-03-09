@@ -48,7 +48,7 @@ async function main() {
             console.log("Compiling batch...");
             await new Promise((resolve, reject) => {
                 exec(
-                    `node --max-old-space-size=8192 node_modules/.bin/hardhat compile --force`,
+                    `node --max-old-space-size=4096 node_modules/.bin/hardhat compile --force`,
                     { 
                         cwd: process.cwd(),
                         env: { 
